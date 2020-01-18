@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <IncidentDef>
+    <defName>BeastAttack</defName>
+    <label>beast attack</label>
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ToolkitCustomManhunter.CustomManhunterIncidentWorker</workerClass>
+    <baseChance>0</baseChance>
+    <letterText>{0} beasts are attacking!</letterText>
+  </IncidentDef>
+
+  <TwitchToolkit.Incidents.StoreIncidentVariables>
+    <defName>BeastAttack</defName>
+    <label>beast attack</label>
+    <abbreviation>beastattack</abbreviation>
+    <cost>1000</cost>
+    <eventCap>2</eventCap>
+    <incidentHelper>ToolkitCustomManhunter.CustomManhunterIncidentHelper</incidentHelper>
+    <karmaType>Bad</karmaType>
+    <minPointsToFire>1000</minPointsToFire>
+    <maxWager>10000</maxWager>
+    <syntax>!buyevent beastattack 1000</syntax>
+    <variables>1</variables>
+  </TwitchToolkit.Incidents.StoreIncidentVariables>
+</Defs>
