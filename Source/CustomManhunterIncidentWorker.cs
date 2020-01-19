@@ -9,7 +9,8 @@ namespace ToolkitCustomManhunter
     public class CustomManhunterIncidentWorker : IncidentWorker
     {
         public const string LOGGER_NAME = "BeastAttack";
-        public const float MAX_POINTS = 9999999f;
+
+        public const float MAX_POINTS = 5000f;
 
         PawnKindDef PawnKindDef;
 
