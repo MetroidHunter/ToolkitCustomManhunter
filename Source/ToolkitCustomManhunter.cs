@@ -68,8 +68,6 @@ namespace ToolkitCustomManhunter
     public class Settings : ModSettings
     {
         public static Dictionary<string, bool> AnimalMap = new Dictionary<string, bool>();
-        public static int MinCount = 1;
-        public static int MaxCount = 100;
 
         public override void ExposeData()
         {

@@ -10,8 +10,6 @@ namespace ToolkitCustomManhunter
     {
         public const string LOGGER_NAME = "BeastAttack";
 
-        public const float MAX_POINTS = 5000f;
-
         PawnKindDef PawnKindDef;
 
         public CustomManhunterIncidentWorker(PawnKindDef pawnKindDef = null)
@@ -45,13 +43,9 @@ namespace ToolkitCustomManhunter
                 return false;
             }
 
-            float percentage = parms.points / MAX_POINTS;
-            float variance = Random.Range(0, 3);
+            int count = ManhunterPackIncidentUtility.GetAnimalsCount(PawnKindDef, parms.points);
 
-            float targetCount = ((Settings.MaxCount - Settings.MinCount) * percentage) - variance;
-
-            int count = (int)Mathf.Clamp(targetCount, Settings.MinCount, Settings.MaxCount);
-            ToolkitPatchLogger.Log(LOGGER_NAME, $"Spawning {count} beasts based on ((({Settings.MaxCount} - {Settings.MinCount}) * {percentage}) - {variance})");
+            ToolkitPatchLogger.Log(LOGGER_NAME, $"Spawning {count} beasts based {parms.points}");
             for (int i = 0; i < count; i++)
             {
                 var loc = CellFinder.RandomClosewalkCellNear(intVec, map, 12, null);
